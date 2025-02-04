@@ -1,0 +1,243 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+/* App container */
+.app-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #121212; /* Dark background color */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow for depth */
+  color: #fff;
+}
+
+/* Heading */
+.heading {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #f1c40f; /* Gold/yellow color like Pornhub's accent */
+  text-transform: uppercase; /* For a more bold heading style */
+}
+
+/* Categories container */
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Categories flex container */
+.categories-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Category card */
+.category-card {
+  background-color: #1e1e1e; /* Darker background for cards */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+  width: 100%;
+  max-width: 220px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+/* Hover effect on category card */
+.category-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Bigger shadow on hover */
+}
+
+/* Category title */
+.category-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #f1c40f; /* Gold/yellow color like Pornhub's accent */
+  padding: 10px;
+  background-color: #333;
+  margin: 0;
+  border-bottom: 2px solid #444;
+}
+
+/* Category thumbnail */
+.category-thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 2px solid #444; /* Separator between image and title */
+}
+
+/* Loading and error messages */
+.loading,
+.error {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f44336;
+}
+
+/* No categories found */
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* Video Container */
+.videos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.video-card {
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect on video card */
+.video-card:hover {
+  transform: scale(1.05);
+}
+
+/* Clickable video card */
+.video-card a {
+  display: block;
+  text-decoration: none; /* Remove underline from anchor */
+  color: inherit; /* Ensure the text color is inherited */
+}
+
+/* Video thumbnail */
+.video-thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Video title */
+.video-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin: 10px;
+}
+
+/* Video info section */
+.video-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #ccc;
+  margin: 10px;
+}
+
+.video-info span {
+  margin-right: 10px;
+}
+
+/* Duration, Rating, Views styles */
+.video-duration,
+.video-rating,
+.video-views {
+  display: inline-block;
+  padding: 5px;
+  background-color: #444;
+  border-radius: 5px;
+}
+
+/* Video rating styling */
+.video-rating {
+  color: #f1c40f; /* Gold/yellow color for rating */
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #d32f2f;
+}
+
+.pagination span {
+  font-size: 16px;
+  color: #fff;
+  margin: 0 10px;
+}
+
+/* Media Queries */
+
+/* For large screens (desktop), display 5 items per row */
+@media (min-width: 1200px) {
+  .categories-flex {
+    justify-content: space-between;
+  }
+
+  .category-card {
+    width: calc(20% - 20px); /* 5 items per row */
+  }
+}
+
+/* For medium screens (tablets), display 2 items per row */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .categories-flex {
+    justify-content: space-between;
+  }
+
+  .category-card {
+    width: calc(48% - 20px); /* 2 items per row */
+  }
+}
+
+/* For small screens (mobiles), display 1 item per row */
+@media (max-width: 767px) {
+  .categories-flex {
+    justify-content: center;
+  }
+
+  .category-card {
+    width: 100%; /* 1 item per row */
+  }
+}
